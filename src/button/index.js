@@ -89,19 +89,5 @@ Button.defaultProps = {
 
     // @desc 点击后的回调
     onClick: ()=> {
-    },
-
-    // @desc test
-    a: 1,
-
-    // @desc test
-    b: [1, 2, 3],
-
-    // @desc test
-    c: {a: 1, b: [1, 2, 3]},
-
-    // @desc test
-    d: ()=> {
-        console.log(123)
     }
 }
