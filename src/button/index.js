@@ -1,5 +1,5 @@
 import React from 'react'
-import classnames from 'classnames'
+import classNames from 'classnames'
 import 'fit-style'
 import './index.scss'
 
@@ -15,14 +15,16 @@ export default class Button extends React.Component {
     }
 
     render() {
+        const {addonLeft, addonRight, loading, type, disabled, size, active, rounded, children, ...others} = this.props
+
         // addon
         let addon = null
-        let addonValue = this.props.addonLeft || this.props.addonRight
-        if (addonValue) {
-            let addonClass = classnames({
+        if (addonLeft || addonRight) {
+            let addonClass = classNames({
                 'fa': true,
-                ['fa-' + addonValue]: true,
-                'pull-right': this.props['addon-right']
+                ['fa-' + (addonLeft || addonRight)]: true,
+                'btn-addon-left': addonLeft,
+                'btn-addon-right': addonRight
             })
             addon = (
                 <i className={addonClass}></i>
@@ -30,40 +32,40 @@ export default class Button extends React.Component {
         }
 
         // loading
-        let loading = false
-        if (this.props.loading !== false) {
-            let loadingClass = classnames({
+        let LoadingComponent = false
+        if (loading === true) {
+            let loadingClass = classNames({
                 'loading-container': true,
-                'show': this.props.loading === true
+                'show': true
             })
-            loading = (
+            LoadingComponent = (
                 <div className={loadingClass}>
                     <i className="fa fa-refresh fa-spin"/>
                 </div>
             )
         }
 
-        let btnClass = classnames({
+        const btnClass = classNames({
             '_namespace': true,
             'btn': true,
-            ['btn-' + this.props.type]: true,
-            'disabled': this.props.disabled || this.props.loading === true,
-            'btn-addon': addonValue,
-            'btn-rounded': this.props.rounded,
-            'btn-lg': this.props.size && this.props.size === 'lg',
-            'btn-xs': this.props.size && this.props.size === 'xs',
-            'btn-sm': this.props.size && this.props.size === 'sm',
-            'active': this.props.active
+            ['btn-' + type]: true,
+            'disabled': disabled || loading === true,
+            'btn-addon': addonLeft || addonRight,
+            'btn-rounded': rounded,
+            'btn-lg': size && size === 'lg',
+            'btn-xs': size && size === 'xs',
+            'btn-sm': size && size === 'sm',
+            'active': active
         })
 
         return (
-            <button style={this.props.style}
-                    onClick={this.handleClick.bind(this)}
-                    className={btnClass}>
+            <button {...others} onClick={this.handleClick.bind(this)}
+                                className={btnClass}>
                 <div style={{display:'flex',justifyContent:'center'}}>
-                    {addon ? addon : null}
-                    {this.props.children}
-                    {loading ? loading : null}
+                    {addonLeft ? addon : null}
+                    {children}
+                    {addonRight ? addon : null}
+                    {loading ? LoadingComponent : null}
                 </div>
             </button>
         )
@@ -86,6 +88,9 @@ Button.defaultProps = {
 
     // @desc 是否loading中
     loading: false,
+
+    // @desc 圆形按钮
+    rounded: false,
 
     // @desc 点击后的回调
     onClick: ()=> {
