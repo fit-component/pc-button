@@ -1,6 +1,6 @@
 {
   "name": "fit-button",
-  "version": "1.2.69",
+  "version": "1.2.70",
   "description": "按钮",
   "main": "lib/index.js",
   "scripts": {
