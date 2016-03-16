@@ -21,10 +21,10 @@ export default class Button extends React.Component {
         let addon = null
         if (addonLeft || addonRight) {
             let addonClass = classNames({
-                'fa': true,
+                'fa'                               : true,
                 ['fa-' + (addonLeft || addonRight)]: true,
-                'btn-addon-left': addonLeft,
-                'btn-addon-right': addonRight
+                'btn-addon-left'                   : addonLeft,
+                'btn-addon-right'                  : addonRight
             })
             addon = (
                 <i className={addonClass}></i>
@@ -36,7 +36,7 @@ export default class Button extends React.Component {
         if (loading === true) {
             let loadingClass = classNames({
                 'loading-container': true,
-                'show': true
+                'show'             : true
             })
             LoadingComponent = (
                 <div className={loadingClass}>
@@ -46,16 +46,16 @@ export default class Button extends React.Component {
         }
 
         const btnClass = classNames({
-            '_namespace': true,
-            'btn': true,
+            '_namespace'   : true,
+            'btn'          : true,
             ['btn-' + type]: true,
-            'disabled': disabled || loading === true,
-            'btn-addon': addonLeft || addonRight,
-            'btn-rounded': rounded,
-            'btn-lg': size && size === 'lg',
-            'btn-xs': size && size === 'xs',
-            'btn-sm': size && size === 'sm',
-            'active': active
+            'disabled'     : disabled || loading === true,
+            'btn-addon'    : addonLeft || addonRight,
+            'btn-rounded'  : rounded,
+            'btn-lg'       : size && size === 'lg',
+            'btn-xs'       : size && size === 'xs',
+            'btn-sm'       : size && size === 'sm',
+            'active'       : active
         })
 
         return (
