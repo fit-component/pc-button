@@ -1,6 +1,6 @@
 {
   "name": "fit-button",
-  "version": "1.2.80",
+  "version": "1.2.81",
   "description": "按钮",
   "main": "lib/index.js",
   "scripts": {
@@ -15,6 +15,6 @@
   "dependencies": {
     "react": "^0.14.7",
     "classnames": "^2.2.1",
-    "fit-style": "^1.1.52"
+    "fit-style": "^1.1.53"
   }
 }
