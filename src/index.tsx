@@ -1,3 +1,5 @@
+/// <reference path="../../../../typings/tsd.d.ts" />
+/// <reference path="../../../../typings-module/fit-style.d.ts" />
 import 'fit-style'
 
 import Button from './button'

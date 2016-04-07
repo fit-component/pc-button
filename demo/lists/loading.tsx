@@ -1,8 +1,8 @@
-import React from 'react'
-import Button from 'fit-button'
+import * as React from 'react'
+import {Button, ButtonGroup} from '../../src'
 
-export default class Demo extends React.Component {
-    constructor(props) {
+export default class Demo extends React.Component<any,any> {
+    constructor(props:any) {
         super(props)
         this.state = {
             loading: false

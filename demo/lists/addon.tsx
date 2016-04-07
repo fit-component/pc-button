@@ -1,11 +1,11 @@
-import React from 'react'
-import Button from 'fit-button'
+import * as React from 'react'
+import {Button, ButtonGroup} from '../../src'
 
 const style = {
     margin: 3
 }
 
-export default class Demo extends React.Component {
+export default class Demo extends React.Component<any,any> {
     render() {
         return (
             <div>

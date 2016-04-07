@@ -1,7 +1,7 @@
-import React from 'react'
-import { Button, ButtonGroup } from 'fit-button'
+import * as React from 'react'
+import {Button, ButtonGroup} from '../../src'
 
-export default class Demo extends React.Component {
+export default class Demo extends React.Component<any,any> {
     render() {
         return (
             <ButtonGroup>
