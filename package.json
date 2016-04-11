@@ -1,6 +1,6 @@
 {
   "name": "fit-button",
-  "version": "2.0.41",
+  "version": "2.0.42",
   "description": "按钮",
   "main": "lib/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "react": "^0.14.7",
     "classnames": "^2.2.1",
-    "fit-transmit-transparently": "^2.0.77",
+    "fit-transmit-transparently": "^2.0.78",
     "fit-style": "^2.0.50"
   }
 }
