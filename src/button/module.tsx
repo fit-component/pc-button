@@ -77,7 +77,7 @@ export interface PropsInterface {
      * 点击后的回调
      */
     onClick?:()=> void
-
+    
     [x:string]:any
 }
 

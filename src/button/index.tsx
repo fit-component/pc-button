@@ -56,12 +56,15 @@ export default class Button extends React.Component<module.PropsInterface,module
             'btn-lg': this.props.size === module.Size.Large,
             'btn-xs': this.props.size === module.Size.ExtraSmall,
             'btn-sm': this.props.size === module.Size.Small,
-            'active': this.props.active
+            'active': this.props.active,
+            [this.props['className']]: !!this.props['className']
         })
 
+        const _others = others(new module.Props(), this.props)
+
         return (
-            <button onClick={this.handleClick.bind(this)}
-                    className={btnClass} {...others(new module.Props(), this.props)}>
+            <button {..._others} onClick={this.handleClick.bind(this)}
+                                 className={btnClass}>
                 <div className="button-container">
                     {this.props.addonLeft ? addon : null}
                     <div className="text-child">{this.props.children}</div>
