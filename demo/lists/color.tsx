@@ -21,6 +21,8 @@ export default class Demo extends React.Component<any,any> {
                         style={style}>Danger</Button>
                 <Button type="dark"
                         style={style}>Dark</Button>
+                <Button type="secondary"
+                        style={style}>Secondary</Button>
             </div>
         )
     }

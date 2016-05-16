@@ -28,7 +28,7 @@ export interface SizeInterface {
 export const Size:SizeInterface = {
     Normal: 'nm',
     Large: 'lg',
-    ExtraSmall: 'sx',
+    ExtraSmall: 'xs',
     Small: 'sm'
 }
 

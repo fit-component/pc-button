@@ -1,14 +1,214 @@
+@import "../../../../../style/components/button";
+
 & {
-  transition: opacity .3s;
+    transition: opacity .3s;
+    font-size: 14px;
+    font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    height: 32px;
+    .button-container {
+        display: flex;
+        align-items: stretch;
+        height: 100%;
+        .text-child {
+            padding: 0 15px;
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }
 
 .loading-container {
-  transition: width .3s;
-  display: inline-block;
-  margin-left: 5px;
-  width: 0;
-  overflow: hidden;
-  &.show {
-    width: 16px;
-  }
+    transition: width .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    overflow: hidden;
+    &.show {
+        width: 22px;
+    }
+}
+
+&.btn {
+    display: inline-block;
+    font-weight: 500;
+    border-radius: $btn-border-radius;
+    outline: 0 !important;
+    border: 1px solid transparent;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        box-shadow: none;
+        opacity: .65;
+    }
+}
+
+&.btn-lg {
+    height: 50px;
+}
+
+&.btn-xs {
+    height: 30px;
+}
+
+&.btn-sm {
+    height: 25px;
+}
+
+&.btn-link {
+    color: $btn-text-color;
+    &.active {
+        box-shadow: none;
+    }
+}
+
+&.btn-default {
+    @include button-variant($btn-text-color, $btn-default-bg, $btn-default-border);
+    background-color: #fff;
+    border-bottom-color: darken($btn-default-border, 2%);
+    box-shadow: (0 1px 1px rgba(90, 90, 90, 0.1));
+    &.btn-bg {
+        border-color: rgba(0, 0, 0, 0.1);
+        background-clip: padding-box;
+    }
+}
+
+&.btn-primary {
+    @include button-variant(#fff, $brand-primary, $brand-primary);
+}
+
+&.btn-success {
+    @include button-variant(#fff, $brand-success, $brand-success);
+}
+
+&.btn-info {
+    @include button-variant(#fff, $brand-info, $brand-info);
+}
+
+&.btn-warning {
+    @include button-variant(#fff, $brand-warning, $brand-warning);
+    &:hover, &:active, &.active {
+        color: #ffffff !important;
+        background-color: #f9d21a;
+        border-color: #f9cf0b;
+    }
+}
+
+&.btn-danger {
+    @include button-variant(#fff, $brand-danger, $brand-danger);
+}
+
+&.btn-dark {
+    @include button-variant(#fff, $brand-dark, $brand-dark);
+}
+
+&.btn-black {
+    @include button-variant(#fff, $brand-black, $brand-black);
+}
+
+&.btn-secondary {
+    @include button-variant(#58666e, $brand-secondary, $brand-secondary);
+    &:hover:not(.active) {
+        border: 1px solid #ccc;
+    }
+}
+
+&.btn-icon {
+    padding: 0 !important;
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    i {
+        top: -1px;
+        position: relative;
+        line-height: 34px;
+    }
+}
+
+&.btn-sm {
+    line-height: 1.5rem;
+}
+
+&.btn-rounded {
+    border-radius: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    &.btn-lg {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+&.btn {
+    > i {
+        &.pull-left,
+        &.pull-right {
+            line-height: 2.5rem;
+        }
+    }
+}
+
+&.btn-block {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+&.btn-group-vertical > .btn:first-child:not(:last-child) {
+    border-top-right-radius: $border-radius-base;
+}
+
+&.btn-group-vertical > .btn:last-child:not(:first-child) {
+    border-bottom-left-radius: $border-radius-base;
+}
+
+&.btn-addon {
+    i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        width: 30px;
+        position: relative;
+        border-radius: $btn-border-radius 0 0 $btn-border-radius;
+    }
+    &.btn-sm {
+        i {
+            width: 30px;
+        }
+    }
+    &.btn-lg {
+        i {
+            width: 50px;
+        }
+    }
+    &.btn-xs {
+        i {
+            width: 30px;
+        }
+    }
+    &.btn-sm {
+        i {
+            width: 25px;
+        }
+    }
+    &.btn-default {
+        i {
+            background-color: transparent;
+            border-right: 1px solid $border-color;
+        }
+    }
+}
+
+&.btn-groups .btn {
+    margin-bottom: 5px;
 }

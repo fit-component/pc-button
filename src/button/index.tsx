@@ -8,7 +8,7 @@ export default class Button extends React.Component<module.PropsInterface,module
     static defaultProps = new module.Props()
     public state = new module.State()
 
-    constructor(props:any) {
+    constructor(props: any) {
         super(props)
     }
 
@@ -19,7 +19,7 @@ export default class Button extends React.Component<module.PropsInterface,module
 
     render() {
         // addon
-        let addon:any = null
+        let addon: any = null
         if (this.props.addonLeft || this.props.addonRight) {
             let addonClass = classNames({
                 'fa': true,
@@ -33,7 +33,7 @@ export default class Button extends React.Component<module.PropsInterface,module
         }
 
         // loading
-        let loadingComponent:any = null
+        let loadingComponent: any = null
         if (this.props.loading === true) {
             let loadingClass = classNames({
                 'loading-container': true,
@@ -62,9 +62,9 @@ export default class Button extends React.Component<module.PropsInterface,module
         return (
             <button onClick={this.handleClick.bind(this)}
                     className={btnClass} {...others(new module.Props(), this.props)}>
-                <div style={{display:'flex',justifyContent:'center'}}>
+                <div className="button-container">
                     {this.props.addonLeft ? addon : null}
-                    {this.props.children}
+                    <div className="text-child">{this.props.children}</div>
                     {this.props.addonRight ? addon : null}
                     {this.props.loading ? loadingComponent : null}
                 </div>
