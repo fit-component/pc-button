@@ -1,6 +1,8 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
+import * as ReactDOM from 'react-dom'
 import * as module from './module'
+import * as $ from 'jquery'
 import {others} from '../../../../common/transmit-transparently/src'
 import './index.scss'
 
@@ -10,6 +12,25 @@ export default class Button extends React.Component<module.PropsInterface,module
 
     constructor(props: any) {
         super(props)
+    }
+
+    componentDidMount() {
+        // 绑定 material 效果
+        let taint: any, d: number, x: number, y: number
+        $(ReactDOM.findDOMNode(this)).click(function (e:any) {
+            if ($(this).find('.taint').length == 0) {
+                $(this).prepend('<span class="taint"></span>')
+            }
+            taint = $(this).find('.taint')
+            taint.removeClass('drop')
+            if (!taint.height() && !taint.width()) {
+                d = Math.max($(this).outerWidth(), $(this).outerHeight())
+                taint.css({height: d, width: d})
+            }
+            x = e.pageX - $(this).offset().left - taint.width() / 2
+            y = e.pageY - $(this).offset().top - taint.height() / 2
+            taint.css({top: y + 'px', left: x + 'px'}).addClass('drop')
+        })
     }
 
     handleClick() {
