@@ -1,8 +1,8 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
 import * as ReactDOM from 'react-dom'
-import * as module from './module'
 import * as $ from 'jquery'
+import * as module from './module'
 import {others} from '../../../../common/transmit-transparently/src'
 import './index.scss'
 
@@ -17,7 +17,7 @@ export default class Button extends React.Component<module.PropsInterface,module
     componentDidMount() {
         // 绑定 material 效果
         let taint: any, d: number, x: number, y: number
-        $(ReactDOM.findDOMNode(this)).click(function (e:any) {
+        $(ReactDOM.findDOMNode(this)).click(function (e: any) {
             if ($(this).find('.taint').length == 0) {
                 $(this).prepend('<span class="taint"></span>')
             }
@@ -62,7 +62,7 @@ export default class Button extends React.Component<module.PropsInterface,module
             })
             loadingComponent = (
                 <div className={loadingClass}>
-                    <i className="fa fa-refresh fa-spin"/>
+                    <i className="fit-button-loading animation-spin"/>
                 </div>
             )
         }
@@ -84,8 +84,9 @@ export default class Button extends React.Component<module.PropsInterface,module
         const _others = others(new module.Props(), this.props)
 
         return (
-            <button {..._others} onClick={this.handleClick.bind(this)}
-                                 className={btnClass}>
+            <button {..._others}
+                onClick={this.handleClick.bind(this)}
+                className={btnClass}>
                 <div className="button-container">
                     {this.props.addonLeft ? addon : null}
                     <div className="text-child">{this.props.children}</div>
