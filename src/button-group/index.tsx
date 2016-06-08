@@ -16,7 +16,8 @@ export default class ButtonGroup extends React.Component<module.PropsInterface,m
         const groupClass = classNames({
             '_namespace': true,
             'btn-group': !this.props.vertical,
-            'btn-group-vertical': this.props.vertical
+            'btn-group-vertical': this.props.vertical,
+            [this.props['className']]: !!this.props['className']
         })
 
         return (
