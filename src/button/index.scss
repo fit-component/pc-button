@@ -122,6 +122,9 @@
         border-color: rgba(0, 0, 0, 0.1);
         background-clip: padding-box;
     }
+    &.active {
+        background: whitesmoke;
+    }
 }
 
 &.btn-primary {
