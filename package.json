@@ -1,6 +1,6 @@
 {
   "name": "fit-button",
-  "version": "3.1.28",
+  "version": "3.1.29",
   "description": "按钮",
   "main": "lib/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "classnames": "^2.2.3",
     "react-dom": "^15.0.1",
     "jquery": "^2.1.4",
-    "fit-transmit-transparently": "^3.1.20"
+    "fit-transmit-transparently": "^3.1.21"
   },
   "typings": "lib/index.d.ts"
 }
