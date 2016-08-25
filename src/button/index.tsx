@@ -33,9 +33,9 @@ export default class Button extends React.Component<module.PropsInterface,module
         })
     }
 
-    handleClick() {
+    handleClick(event: React.MouseEvent) {
         if (this.props.disabled || this.props.loading)return
-        this.props.onClick()
+        this.props.onClick(event)
     }
 
     render() {

@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 export interface TypeInterface {
     Default:string
     Primary:string
@@ -76,7 +78,7 @@ export interface PropsInterface {
     /**
      * 点击后的回调
      */
-    onClick?:()=> void
+    onClick?:(event?:React.MouseEvent)=> void
     
     [x:string]:any
 }
